@@ -1,26 +1,28 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Card from '@/components/Card.vue'
-import Button from '@/components/Button.vue'
+import Header from '@/components/Header.vue'
 </script>
 
 <template>
- 
-
-
- <div class="main_border">
-    <h1 class="primary_title">Avis de passage</h1>
-
     
-    <form class="main_form">
-        <!-- <div class="title_form">
-        <label for="Nom de l'entreprise">Nom de lentreprise
-            <span class="input01"><input type="text"></span>
-        </label>
-        <label for="Nom de l'entreprise">Date de passage de notre technicien
-            <span class="input02"><input type="text"></span>
-        </label>
-        <label for="Nom de l'entreprise">Observations
+    <header>
+        <img src="./assets/logo-clean3000-transparent.png" alt="" >
+    </header>
+    
+    <div class="main_border">
+        <h1 class="primary_title">Avis de passage</h1>
+        
+        
+        <form class="main_form">
+            <!-- <div class="title_form">
+                <label for="Nom de l'entreprise">Nom de lentreprise
+                    <span class="input01"><input type="text"></span>
+                </label>
+                <label for="Nom de l'entreprise">Date de passage de notre technicien
+                    <span class="input02"><input type="text"></span>
+                </label>
+                <label for="Nom de l'entreprise">Observations
             <span class="input03"><input type="text"></span>
         </label>
         </div> -->
@@ -38,22 +40,26 @@ import Button from '@/components/Button.vue'
         </ul>
         
     </form>
-
-
-
-        <div class="button_01">
-            <button class="button-43" role="button">Button 43</button>
+    
+    
+    
+    <div class="button_01">
+        <button class="button-43" role="button">Button 43</button>
             <button class="button-43" role="button">Validez votre avis de Passage</button>
         </div>
 </div>
 
 
-<Card></Card>
-<Button></Button>
+
 
 </template>
 
 <style scoped>
+
+header{
+    background-color: rgb(91, 95, 92);
+    padding-bottom: 0;
+}
 
 .main_border{
     border: 1px solid black;
@@ -72,7 +78,7 @@ import Button from '@/components/Button.vue'
     justify-content: center; /* Centre horizontalement les boutons */
     align-items: flex-end; /* Place les boutons en bas */
     gap: 30rem; /* Ajoute un espacement entre les boutons */
-    height: 50vh;
+    height: 40vh;
       
 
 
@@ -119,6 +125,15 @@ import Button from '@/components/Button.vue'
 
   .form01{
     display: flex;;
+  }
+  ul{
+    padding: 10px;
+  }
+
+  ul li{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
   }
 
 </style>
