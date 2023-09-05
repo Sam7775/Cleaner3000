@@ -1,60 +1,84 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Card from '@/components/Card.vue'
-import Header from '@/components/Header.vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const name = ref('')
+const date = ref('')
+const Info = ref('')
+
+const router = useRouter()
+
+const submitForm = () => {
+  // Vous pouvez accéder aux données du formulaire ici (name.value, date.value, additionalInfo.value)
+  // Et effectuer des opérations telles que la validation
+  // Ensuite, vous pouvez naviguer vers la page "/recap" comme suit :
+  router.push('/recap')
+}
 </script>
 
 <template>
-    
-    <header>
-        <img src="./assets/logo-clean3000-transparent.png" alt="" >
-    </header>
-    
-    <div class="main_border">
-        <h1 class="primary_title">Avis de passage</h1>
-        
-        
+    <div>
+      <header>
+        <img src="@/assets/logo-clean3000-transparent.png" alt="" />
+      </header>
+  
+      <div class="main_border">
+        <h1 class="primary_title">Avis de Passage</h1>
+  
         <form class="main_form">
-            <!-- <div class="title_form">
-                <label for="Nom de l'entreprise">Nom de lentreprise
-                    <span class="input01"><input type="text"></span>
-                </label>
-                <label for="Nom de l'entreprise">Date de passage de notre technicien
-                    <span class="input02"><input type="text"></span>
-                </label>
-                <label for="Nom de l'entreprise">Observations
-            <span class="input03"><input type="text"></span>
-        </label>
-        </div> -->
-
-        <ul>
-            <li>Nom de l'entreprise
-                <input type="text">
-            </li>
-            <li>date de passage du technicien
-                <input type="text">
-            </li>
-            <li>Observations
-                <input type="text">
-            </li>
-        </ul>
-        
-    </form>
-    
-    
-    
-    <div class="button_01">
-        <button class="button-43" role="button">Button 43</button>
-            <button class="button-43" role="button">Validez votre avis de Passage</button>
+          <div class="container01">
+            <p>Nom du Client</p>
+            <p>Date d'intervention du technicien</p>
+            <p>Informations supplémentaires</p>
+          </div>
+          <div class="container02">
+            <input type="text" v-model="name" />
+            <input type="date" v-model="date" />
+            <textarea v-model="Info" cols="20" rows="5"></textarea>
+          </div>
+        </form>
+  
+        <div class="button_01">
+          <button class="button-43" role="button" @click="submitForm">Validez votre avis de Passage</button>
         </div>
-</div>
-
-
-
-
-</template>
+      </div>
+  
+      <footer class="footer">
+        <p class="copyright">Copyright &copy; 2023 Your Name All Rights Reserved</p>
+      </footer>
+    </div>
+  </template>
 
 <style scoped>
+
+
+.copyright{
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    background-color: rgb(54, 53, 53);
+    background: linear-gradient(0.25turn, #000000, #3e3f3c, #9dd6a0);
+    height: 15vh;
+}
+
+
+p{
+    font-size: 2em;
+}
+.primary_title{
+    margin-top: 50px;
+    font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main_form{
+    display: flex;
+    justify-content: space-around;
+
+}
 
 header{
     background-color: rgb(91, 95, 92);
@@ -78,7 +102,7 @@ header{
     justify-content: center; /* Centre horizontalement les boutons */
     align-items: flex-end; /* Place les boutons en bas */
     gap: 30rem; /* Ajoute un espacement entre les boutons */
-    height: 40vh;
+    height: 25vh;
       
 
 
@@ -111,29 +135,30 @@ header{
     }
   }
   
+input{
+    font-size: 18px;
+    height: 30%;
+    margin: 1em;
+    width: 150%;
+
+}
+
+textarea{
+    width: 300px;
+    font-size: 18px;
+    margin: 10%;
+}
+ 
+.container01 p{
+    margin: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ .container02{
+    display: flex;
+    flex-direction: column;
+    
+ }
 
  
-
-  label{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-  }
-  label span{
-    margin-left: 10rem;
-  }
-
-  .form01{
-    display: flex;;
-  }
-  ul{
-    padding: 10px;
-  }
-
-  ul li{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
 
 </style>
