@@ -1,17 +1,13 @@
 <script setup>
-import Header from '@/components/Header.vue'
 
 </script>
 
 
 <template>
 
-
-
-    <header>
-        
-
-    </header>
+<header>
+        <img src="@/assets/logo-clean3000-transparent.png" alt="" />
+</header>
 
 
 
@@ -21,6 +17,11 @@ import Header from '@/components/Header.vue'
 
 <style scoped>
 
+
+header{
+    background-color: rgb(91, 95, 92);
+    padding-bottom: 0;
+}
 
 
 </style>
